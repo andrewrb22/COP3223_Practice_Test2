@@ -1,95 +1,28 @@
-#include<stdio.h>  
-int main()  
-{  
-    float r = 2.5, *p = &r; 
-    p = malloc (sizeof(float)); 
-    *p = 3; 
-     printf("%.2f", r); 
-  
+void fun(int [], int ); 
+void print(int [], int ); 
  
-     return 0;  
+int main() 
+{ 
+   int n[10] = {5,-5, 10 , 8} ; 
+   fun(n,4); 
+   print(n,4); 
+   return 0; 
 } 
-
-// 1. QUESTION
-// int *x , y = 2 , z = 3; 
-//      x = & z; 
  
-//      printf("%d", *x); 
-//      x = &y; 
+void fun( int *a , int limit) 
+{ 
+      int i; 
+      for (i=limit-1; i>0; i--) 
+           a[i-1] = a[i]; 
+} 
  
-//    return 0;  
-//1.ANSWER = 3
-
-//---------------------------
-
-//2. QUESTION
-// int x = 1, y = 2 , z = 3, *p; 
+void print( int array[], int size) 
+{ 
+    int i= 0; 
+    while (i<size) 
+    { 
+        printf("%d  ", *array + i); 
+        i++; 
+    } 
  
-//      p = &y; 
-//      printf("%d", (z+y-1)+ *p/4); 
- 
-//    return 0; 
-//ANSWER = 4 - *P is 0 
-
-//---------------------------
-
-//3.QUESTION
-// int *x  = malloc (3*sizeof(int)); 
-//      int a = 1; 
-//      *x = 2; 
-//       x = &a; 
-      
-//      printf("%d", *x); 
-//ANSWER = 1 
-
-//-------------------------------------
-
-//4.QUESTION
-//#include<stdio.h>  
-// int main()  
-// {  
-//      int *p, *q, x = 100, y = 200; 
-      
-//      q = &y; 
-//      q = &x; 
-//      p = &y; 
-//      printf("printf(%d);", *q); 
- 
-//    return 0;  
-// }
-//ANSWER = printf(100)
-
-//---------------------------------------
-
-//5.QUESTION
-// #include<stdio.h>  
-// int main()  
-// {  
-    
-//      int x = 1, y =1, z = 1; 
-      
-//      x = *&y – z; 
-  
-//      printf("%d", x); 
- 
-//    return 0;  
-// } 
-//ANSWER = 0
-
-//---------------------------------------
-
-//6.QUESTION
-// #include<stdio.h>  
-// int main()  
-// {  
-//     float r = 2.5, *p = &r; 
-//     p = malloc (sizeof(float)); 
-//     *p = 3; 
-//      printf("%.2f", r); 
-  
- 
-//      return 0;  
-// } 
-//ANSWER = 2.50
-
-//-----------------------------------
+} 

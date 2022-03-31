@@ -1,0 +1,631 @@
+// 1. QUESTION
+// int *x , y = 2 , z = 3; 
+//      x = & z; 
+ 
+//      printf("%d", *x); 
+//      x = &y; 
+ 
+//    return 0;  
+//1.ANSWER = 3
+
+//---------------------------
+
+//2. QUESTION
+// int x = 1, y = 2 , z = 3, *p; 
+ 
+//      p = &y; 
+//      printf("%d", (z+y-1)+ *p/4); 
+ 
+//    return 0; 
+//ANSWER = 4 - *P is 0 
+
+//---------------------------
+
+//3.QUESTION
+// int *x  = malloc (3*sizeof(int)); 
+//      int a = 1; 
+//      *x = 2; 
+//       x = &a; 
+      
+//      printf("%d", *x); 
+//ANSWER = 1 
+
+//-------------------------------------
+
+//4.QUESTION
+//#include<stdio.h>  
+// int main()  
+// {  
+//      int *p, *q, x = 100, y = 200; 
+      
+//      q = &y; 
+//      q = &x; 
+//      p = &y; 
+//      printf("printf(%d);", *q); 
+ 
+//    return 0;  
+// }
+//ANSWER = printf(100)
+
+//---------------------------------------
+
+//5.QUESTION
+// #include<stdio.h>  
+// int main()  
+// {  
+    
+//      int x = 1, y =1, z = 1; 
+      
+//      x = *&y – z; 
+  
+//      printf("%d", x); 
+ 
+//    return 0;  
+// } 
+//ANSWER = 0
+
+//---------------------------------------
+
+//6.QUESTION
+// #include<stdio.h>  
+// int main()  
+// {  
+//     float r = 2.5, *p = &r; 
+//     p = malloc (sizeof(float)); 
+//     *p = 3; 
+//      printf("%.2f", r); 
+  
+ 
+//      return 0;  
+// } 
+//ANSWER = 2.50
+
+//-----------------------------------
+
+//7. QUESTION
+// #include<stdio.h>  
+// int main()  
+// {  
+    
+//      char c = ‘$’;  
+ 
+//  printf("%d", &c); 
+ 
+//    return 0;  
+// }
+//ANSWER = 6422047 (place number of the character)
+
+//-----------------------------------------------
+
+//8.QUESTION
+// #include<stdio.h>  
+// #include<stdlib.h>  
+ 
+// int main()  
+// {  
+    
+//      int *x ; 
+//      x = malloc(sizeof(int)); 
+//      *x = 3; 
+ 
+// if ( *x > 3 && x != 2 ) printf("TRUE"); 
+// else printf("FALSE"); 
+ 
+// return 0;  
+// } 
+//ANSWER = FALSE
+
+//---------------------------------------------
+
+//9.QUESTION
+// #include<stdio.h>  
+// #include<stdlib.h>  
+ 
+// int main()  
+// {  
+    
+//      int *p; 
+//      p = malloc (2*sizeof(int)); 
+//      *p = 2; 
+//       p++; 
+//      *p = 3; 
+//       p--; 
+      
+ 
+// switch ( *p + 1) 
+// { 
+// case 3: printf("TRUE"); 
+// case 4: printf("TRUE"); 
+// default: printf("TRUE"); 
+// } 
+// printf("TRUE"); 
+// return 0;  
+// } 
+//ANSWER = TRUETRUETRUETRUE (4)
+
+//--------------------------------------
+
+//10.QUESTION
+// #include<stdio.h>  
+// int main()  
+// {  
+//    int n = 0;  
+//    for(n = 7; n<0; n--)  
+//    { 
+//      printf("*****\n"); 
+//  n = 2*n; 
+//    } 
+//    printf("n = *%d", n); 
+ 
+//    return 0;  
+// } 
+//ANSWER = N = *7 
+
+//-----------------------------------------------------
+
+//11.QUESTION
+// #include<stdio.h>  
+// void fun (int); 
+// int main()  
+// {  
+//    fun(3); 
+ 
+//    return 0;  
+// } 
+// void fun (int a) 
+// { 
+//    int x = 10;  
+//    while(a != 3 || x > 5)  
+//    { 
+//   a = a + 5; 
+//   if ( a < 7 )  
+//   {  
+//    printf ("%d\n", a); 
+//    continue; 
+//   } 
+//    }    
+// } 
+//ANSWER = -2147459178 (PLACE NUMBER OF THE VALUE, IT NEVER STOPS BECUASE OF THE WHILE LOOP AND CONTINUE)
+
+//-----------------------------------------------------------
+
+//12.QUESTION
+// #include<stdio.h>  
+ 
+// int main()  
+// {  
+//    int n = 3;  
+//    while( n > 1)  
+//    { 
+//   if ( n <= 7 )  
+//   break;    
+//   printf ("%d\n", n); 
+//    } 
+    
+//    return 0;  
+// } 
+// ANSWER = Empty becuase of the break in the while loop before the printf
+
+//---------------------------------------------------------------------------
+
+13.QUESTIOM
+#include<stdio.h>  
+ 
+void f(int); 
+ 
+int main() 
+{ 
+int i = 2; 
+f(i); 
+ 
+ printf("One "); 
+ if(i>1) 
+ printf("Two "); 
+ else 
+ printf("Three "); 
+ printf("Four "); 
+ 
+return 0; 
+} 
+ 
+void f(int i){ i=1; } 
+ANSWER = ONE TWO FOUR
+
+//------------------------------------------
+
+14. QUESTION
+#include<stdio.h>  
+int main()  
+{  
+   int n = 5;  
+   int *p = &n ; 
+  
+   n = 0; 
+   *p = 55; 
+   printf("*p = %d\n", n); 
+ 
+   return 0;  
+} 
+ANSWER = *p = 55
+
+//------------------------------------------------------
+ 15. QUESTIOM
+ #include<stdio.h>  
+ 
+int myFun( int); 
+ 
+int main()  
+{  
+   int n = 5;  
+   n=myFun ( n );   
+   printf("%d", n); 
+ 
+   return 0;  
+} 
+ 
+ 
+int myFun( int var)  
+{  
+   var = 1; 
+   return var; 
+} 
+ANSWER = 1
+
+//-------------------------------------------
+16.QUESTIOM
+#include<stdio.h>  
+char returnChar ( int ); 
+ 
+int main()  
+{ 
+   char option = returnChar (3); 
+ 
+switch(option) 
+{ 
+ case 'H' : printf("Hello"); 
+              break; 
+ case 'W' : printf("Welcome"); 
+              break; 
+ case 'B' : printf("Bye"); 
+           
+   default: printf("Take care"); 
+ 
+} 
+return 0; 
+} 
+ 
+Char returnChar ( int option ) 
+{  
+   if ( option == 3 ) return 'B'; 
+   return 'h'; 
+} 
+ANSWER = ByeTake care
+
+//----------------------------------------------
+17.QUESTIOM
+#include<stdio.h>  
+ 
+int myFun( int var); 
+ 
+int main()  
+{  
+   int n = 5, result;  
+    
+   result = myFun ( n ); 
+ 
+   printf("%d", result); 
+ 
+   return 0;  
+} 
+ 
+int myFun( int var)  
+{  
+    switch ( var ) 
+ { 
+  case 1: return 5; 
+   case 10: return 50; 
+  break; 
+  default: return 0; 
+ } 
+   return 1; 
+} 
+ANSWER = 0
+
+//------------------------------------------
+18.QUESTIOM
+#include<stdio.h>  
+ 
+void myFun( int , int *); 
+ 
+int main()  
+{  
+   int n = 5, x = 5;  
+   myFun ( n , &x );   
+   printf("%d and %d", n , x); 
+ 
+   return 0;  
+} 
+ 
+void myFun( int var, int * p)  
+{  
+   var = 1; 
+   *p = var; 
+} 
+ANSWER = 5 and 1
+
+//----------------------------------------------------
+19. QUESTION
+#include<stdio.h>  
+ 
+int main()  
+{  
+   int *ptr1, *ptr2, num1 = 10, num2 = 10;  
+    
+ptr1 = & num1; 
+ptr2 = & num2; 
+ 
+if ( ptr1 == ptr2 ) printf ("TRUE"); 
+else printf ("FALSE"); 
+ 
+ 
+   return 0;  
+} 
+ANSWER = FALSE
+
+//------------------------------------------------------
+20. QUESTIOM - USER INPUT = 15 
+#include<stdio.h>  
+ 
+void getNumber ( int *); 
+ 
+int main()  
+{  
+   int n = 5;  
+    
+   getNumber ( &n ); 
+    
+   printf("%d", n); 
+ 
+   return 0;  
+} 
+ 
+void getNumber (int *pVar) 
+{ 
+printf ("Enter a number: "); 
+scanf("%d", pVar); 
+} 
+ANSWER = 15 
+
+//----------------------------------------
+21. QUESTION - USER INPUT = 15
+#include<stdio.h>  
+ 
+void getNumber ( int ); 
+ 
+ 
+int main()  
+{  
+   int n = 5;  
+    
+   getNumber ( n ); 
+    
+   printf("%d", n); 
+ 
+   return 0;  
+} 
+ 
+ 
+void getNumber (int anyNum) 
+{ 
+printf ("Enter a number: "); 
+scanf("%d", & anyNum); 
+} 
+ANSWER = 5
+
+//------------------------------------------------------
+22. QUESTION
+int main()  
+{  
+   int n = 5, *pointer, *anotherPointer;  
+    
+   pointer = &n; 
+   anotherPointer = pointer 
+   *pointer = 15; 
+n = 100; 
+ 
+   printf("%d", *anotherPointer); 
+ 
+   return 0;  
+} 
+ANSWER = 100
+
+//----------------------------------------------------------
+23.QUESTION 
+int main()  
+{  
+   int n = 5, x = 0, * pointer;  
+    
+   n = 100; 
+   x = & pointer; 
+   pointer = & n;  
+   x = 200; 
+ 
+   printf("%d", *pointer); 
+   pointer = & x; 
+ 
+   return 0;  
+} 
+ANSWER = 100
+
+//-------------------------------------------------
+24. QUESTION
+int  fun1 ( int var ); 
+int  fun2 ( int var ); 
+ 
+int main()  
+{  
+   int n = 5, x = 0; 
+ 
+    x = fun1 ( fun2(n) ); 
+ 
+   printf("%d", x); 
+ 
+   return 0;  
+} 
+ 
+int  fun2 ( int var ) 
+{ 
+return var; 
+} 
+int  fun1 ( int var ) 
+{ 
+return var; 
+} 
+ANSWER = 5
+
+//----------------------------------------------------
+25.QUESTION
+int main() 
+{ 
+ 
+    int n[10] = {5, -5}; 
+     
+    printf ("%d", *n - n[0]); 
+ 
+   return 0; 
+} 
+ANSWER = 0
+
+//-------------------------------------------------------
+26.QUESTION
+void fun( int *); 
+ 
+ 
+int main() 
+{ 
+   int n[10] = {5,-5} ; 
+ 
+   fun(n) ; 
+   printf("%d", n[1/2]); 
+ 
+   return 0; 
+ 
+ 
+} 
+ 
+void fun( int *a) 
+{ 
+      *a = 10; 
+ 
+} 
+ANSWER = 10
+
+//------------------------------------------------------
+27. QUESTION
+void fun( int ); 
+ 
+ 
+int main() 
+{ 
+   int n[10] = {5,-5} ; 
+ 
+   fun(*n) ; 
+   printf("%d", n[1/2]); 
+ 
+   return 0; 
+ 
+ 
+} 
+ 
+void fun( int a) 
+{ 
+      a = 10; 
+ 
+} 
+ANSWER = 5
+
+//----------------------------------------------------
+28.QUESTION
+int fun( int ); 
+ 
+ 
+int main() 
+{ 
+   int n[10] = {5,-5} ; 
+ 
+   n[0] = fun(*n) ; 
+   printf("%d", n[0]); 
+ 
+   return 0; 
+ 
+ 
+} 
+ 
+int fun( int a) 
+{ 
+      a = 10; 
+      return a; 
+ 
+} 
+ANSWER = 10
+
+//-----------------------------------------------
+29. QUESTION
+
+void fun( int [], int ); 
+ 
+ 
+int main() 
+{ 
+   int n[10] = {5,-5, 10 , 8} ; 
+ 
+   fun(n,3); 
+   printf("%d and %d", n[0], n[1]); 
+ 
+   return 0; 
+ 
+} 
+ 
+void fun( int *a , int limit) 
+{ 
+      int i; 
+      for (i=0; i<limit-1; i++) 
+           a[0] = a[i]; 
+ 
+     // return a; 
+ 
+}
+ANSWER = -5 and -5
+
+//---------------------------------------------
+30. QUESTION
+void fun(int [], int ); 
+void print(int [], int ); 
+ 
+int main() 
+{ 
+   int n[10] = {5,-5, 10 , 8} ; 
+   fun(n,4); 
+   print(n,4); 
+   return 0; 
+} 
+ 
+void fun( int *a , int limit) 
+{ 
+      int i; 
+      for (i=limit-1; i>0; i--) 
+           a[i-1] = a[i]; 
+} 
+ 
+void print( int array[], int size) 
+{ 
+    int i= 0; 
+    while (i<size) 
+    { 
+        printf("%d  ", *array + i); 
+        i++; 
+    } 
+ 
+} 
+ANSWER = 8 9 10 11
+
